@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <title>Lauren and Sebastian's Wedding Evite</title>
     <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Crimson+Text" rel="stylesheet">
-    <link rel="stylesheet" href="css/flexboxgrid.css" type="text/css">
-    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript/jquery-3.1.0.js" charset="utf-8"></script>
-    <script src="javascript/jquery.icalendar.js" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='javascript/jquery-3.1.0.js') }}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/master.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/flexboxgrid.css') }}"/>
+    {% block style %} {% endblock %}
 </head>
 
 <body>
     <div class="row">
         <div class="col-xs-12 banner">
-            <object id="banner-svg" type="image/svg+xml" data="images/weddingbanner.svg"></object>
+            <object id="banner-svg" type="image/svg+xml" data="static/images/weddingbanner.svg"></object>
         </div>
     </div>
     <div class="announcement row">
@@ -43,27 +43,55 @@
     <div class="row">
         <div class="footer">
             <div class="col-xs-4 col-xs-offset-4">
-
                 <h2 class="rsvp btn">RSVP now</h2>
             </div>
             <!-- <img src="images/weddingfooter-compressor.svg" /> -->
             <div class="col-xs-12">
-
-                <object id="footer-svg" type="image/svg+xml" data="images/weddingfooter-compressor.svg"></object>
+                <object id="footer-svg" type="image/svg+xml" data="static/images/weddingfooter-compressor.svg"></object>
             </div>
+        </div>
+        <div class="footer" style="display:none">
+            <form method="POST" action="/">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.name.label }}</h4>
+                        {{ form.name(size=20) }}
+                    </div>
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.email.label }}</h4>
+                        {{ form.email }}
+                    </div>
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.address.label }}</h4>
+                        {{ form.address }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.rsvp.label }}</h4>
+                        {{ form.rsvp }}
+                    </div>
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.plusone.label }}</h4>
+                        {{ form.plusone }}
+                    </div>
+                    <div class="col-xs-4">
+                        <h4 class="form">{{ form.limitations.label }}</h4>
+                        {{ form.limitations }}
+                    </div>
+                </div>
+                <input class="btn" type="submit" value="Finish and Send">
+            </form>
         </div>
     </div>
     <script>
-        $('.when').icalendar({
-            start: new Date(2016, 9 - 9, 22, 4, 00, 00),
-            end: new Date(2016, 9 - 9, 22, 10, 00, 00),
-            title: 'Lauren Tilley & Sebastian MacDonald\'s Wedding ',
-            description: 'A traditional barbeque for our big day',
-            location: '1710 Old NC 10, Hillsborough, NC 27278'
-        });
         $('.where').click(function(){
             console.log('Where clicked');
             window.location.href = 'https://goo.gl/maps/zpmSvnjbeyB2';
+        });
+
+        $('.rsvp').click(function() {
+            $('.footer').toggle()
         });
     </script>
 </body>

@@ -16,6 +16,11 @@ h1 {
     vertical-align: middle;
     width: 100%;
     font-weight: 300;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 h2, h3, h4 {
@@ -28,11 +33,22 @@ h2, h3, h4 {
 }
 
 h3 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     font-size: 4vw;
 }
 
 h4 {
     font-size: 3vw;
+}
+
+input, textarea {
+    background-color: transparent;
+    border: 1px solid #BD8A3D;
+    color: #BD8A3D;
 }
 
 .footer, .banner {
@@ -57,6 +73,23 @@ h4 {
     background-color: #735425;
 }
 
+
+.rsvp {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    z-index: 100;
+}
+
+.form {
+    display: inline;
+    vertical-align: text-bottom;;
+    margin-right: 1em;
+}
+
 #footer-svg {
     position: absolute;
     left: 0;
@@ -65,13 +98,6 @@ h4 {
     z-index: 0;
 }
 
-.rsvp {
-    position: relative;
-    z-index: 100;
-}
-
 @media screen and (min-width: 700) {
-    h2{
-
-    }
+    h2 {}
 }
