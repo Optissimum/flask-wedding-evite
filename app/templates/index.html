@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lauren and Sebastian's Wedding Evite</title>
+    <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexboxgrid.css" type="text/css">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/jquery-3.1.0.js" charset="utf-8"></script>
+    <script src="javascript/jquery.icalendar.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-12 banner">
+            <object id="banner-svg" type="image/svg+xml" data="images/weddingbanner.svg"></object>
+        </div>
+    </div>
+    <div class="announcement row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <h1>Lauren Cordell &nbsp;Tilley
+          <br> &amp;
+          <br> Fletcher Marsden Sebastian MacDonald III
+        </h1>
+            <h3>Invite you to celebrate their marriage!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn where col-sm-6 col-xs-12 col-md-6">
+            <h3>Where</h3>
+            <h4>Unitarian Universalist Congregation of Hillsborough <br> 1710 Old NC 10,<br> Hillsborough, NC 27278</h4>
+        </div>
+        <div class="btn when col-sm-6 col-xs-12 col-md-6">
+            <h3>When</h3>
+            <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
+    <br>At four o'clock in the afternoon</h4>
+        </div>
+    </div>
+    <h3>Celebrations and Dinner to proceed afterwards</h3>
+    <div class="row">
+        <div class="footer">
+            <div class="col-xs-4 col-xs-offset-4">
+
+                <h2 class="rsvp btn">RSVP now</h2>
+            </div>
+            <!-- <img src="images/weddingfooter-compressor.svg" /> -->
+            <div class="col-xs-12">
+
+                <object id="footer-svg" type="image/svg+xml" data="images/weddingfooter-compressor.svg"></object>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.when').icalendar({
+            start: new Date(2016, 9 - 9, 22, 4, 00, 00),
+            end: new Date(2016, 9 - 9, 22, 10, 00, 00),
+            title: 'Lauren Tilley & Sebastian MacDonald\'s Wedding ',
+            description: 'A traditional barbeque for our big day',
+            location: '1710 Old NC 10, Hillsborough, NC 27278'
+        });
+        $('.where').click(function(){
+            console.log('Where clicked');
+            window.location.href = 'https://goo.gl/maps/zpmSvnjbeyB2';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+/**{
+    border: 1px solid black;
+    outline-color: red;
+}*/
+
+body {
+    background-color: #533d1b;
+    color: #c4a571;
+    text-align: center;
+}
+
+h1 {
+    @extend box;
+    font-family: 'Aguafina Script', cursive;
+    font-size: 8vw;
+    vertical-align: middle;
+    width: 100%;
+    font-weight: 300;
+}
+
+h2, h3, h4 {
+    @extend box;
+    font-family: 'Crimson Text', serif;
+    font-size: 6vw;
+    vertical-align: middle;
+    width: 100%;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 4vw;
+}
+
+h4 {
+    font-size: 3vw;
+}
+
+.footer, .banner {
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: -20%;
+    position: relative;
+}
+
+.footer {
+    margin-bottom: 0px;
+}
+
+.btn {
+    border-width: 1px;
+    border-color: #BD8A3D;
+}
+
+.btn:hover {
+    border-radius: 1vw;
+    border-color: #BD8A3D;
+    background-color: #735425;
+}
+
+#footer-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.rsvp {
+    position: relative;
+    z-index: 100;
+}
+
+@media screen and (min-width: 700) {
+    h2{
+
+    }
+}
