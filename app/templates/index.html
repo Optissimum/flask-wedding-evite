@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Lauren and Sebastian's Wedding Evite</title>
-    <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Crimson+Text" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{{ url_for('static', filename='javascript/jquery-3.1.0.js') }}" charset="utf-8"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/master.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/flexboxgrid.css') }}"/>
-    {% block style %} {% endblock %}
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Lauren and Sebastian's Wedding Evite</title>
+        <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Crimson+Text" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{{ url_for('static', filename='javascript/jquery-3.1.0.js') }}" charset="utf-8"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/master.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/flexboxgrid.css') }}"/>
+        {% block style %}{% endblock %}
+    </head>
 
-<body>
-    <div class="row">
-        <div class="col-xs-12 banner">
-            <object id="banner-svg" type="image/svg+xml" data="static/images/weddingbanner.svg"></object>
-        </div>
-    </div>
-    <div class="announcement row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-8">
-            <h1>Lauren Cordell &nbsp;Tilley
-          <br> &amp;
-          <br> Fletcher Marsden Sebastian MacDonald III
-        </h1>
-            <h3>Invite you to celebrate their marriage!</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="btn where col-sm-6 col-xs-12 col-md-6">
-            <h3>Where</h3>
-            <h4>Unitarian Universalist Congregation of Hillsborough <br> 1710 Old NC 10,<br> Hillsborough, NC 27278</h4>
-        </div>
-        <div class="btn when col-sm-6 col-xs-12 col-md-6">
-            <h3>When</h3>
-            <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
-    <br>At four o'clock in the afternoon</h4>
-        </div>
-    </div>
-    <h3>Celebrations and Dinner to proceed afterwards</h3>
-    <div class="row">
-        <div class="footer">
-            <div class="col-xs-4 col-xs-offset-4">
-                <h2 class="rsvp btn">RSVP now</h2>
-            </div>
-            <!-- <img src="images/weddingfooter-compressor.svg" /> -->
-            <div class="col-xs-12">
-                <object id="footer-svg" type="image/svg+xml" data="static/images/weddingfooter-compressor.svg"></object>
+    <body>
+        <div class="row">
+            <div class="col-xs-12 banner">
+                <object id="banner-svg" type="image/svg+xml" data="static/images/weddingbanner.svg"></object>
             </div>
         </div>
-        <div class="footer" style="display:none">
-            <form method="POST" action="/">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.name.label }}</h4>
-                        {{ form.name(size=20) }}
-                    </div>
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.email.label }}</h4>
-                        {{ form.email }}
-                    </div>
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.address.label }}</h4>
-                        {{ form.address }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.rsvp.label }}</h4>
-                        {{ form.rsvp }}
-                    </div>
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.plusone.label }}</h4>
-                        {{ form.plusone }}
-                    </div>
-                    <div class="col-xs-4">
-                        <h4 class="form">{{ form.limitations.label }}</h4>
-                        {{ form.limitations }}
-                    </div>
-                </div>
-                <input class="btn" type="submit" value="Finish and Send">
-            </form>
+        <div class="announcement row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <h1>Lauren Cordell &nbsp;Tilley
+                    <br>
+                    &amp;
+                    <br>
+                    Fletcher Marsden Sebastian MacDonald III
+                </h1>
+                <h3>Invite you to celebrate their marriage!</h3>
+            </div>
         </div>
-    </div>
-    <script>
-        $('.where').click(function(){
-            console.log('Where clicked');
-            window.location.href = 'https://goo.gl/maps/zpmSvnjbeyB2';
-        });
+        <div class="row">
+            <div class="btn where col-sm-6 col-xs-12 col-md-6">
+                <h3>Where</h3>
+                <h4>Unitarian Universalist Congregation of Hillsborough
+                    <br>
+                    1710 Old NC 10,<br>
+                    Hillsborough, NC 27278</h4>
+            </div>
+            <div class="btn when col-sm-6 col-xs-12 col-md-6">
+                <h3>When</h3>
+                <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
+                    <br>At four o'clock in the afternoon</h4>
+            </div>
+        </div>
+        <h3>Celebrations and Dinner to proceed afterwards</h3>
+        <div class="row">
+            <div class="footer">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <h2 class="rsvp btn">RSVP now</h2>
+                </div>
+                <!-- <img src="images/weddingfooter-compressor.svg" /> -->
+                <div class="col-xs-12">
+                    <object id="footer-svg" type="image/svg+xml" data="static/images/weddingfooter-compressor.svg"></object>
+                </div>
+            </div>
+            <div class="footer" style="display:none">
+                <form method="POST" action="/">
+                    <div class="row">
+                        <div class="col-xs form" >
+                            {{ form.name.label }}
+                            {{ form.name(size=20) }}
+                        </div>
+                        <div class="col-xs form" >
+                            {{ form.email.label }}
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs form" >
+                            {{ form.address.label }}
+                            {{ form.address }}
+                        </div>
+                        <div class="col-xs form" >
+                            {{ form.rsvp.label }}
+                            {{ form.rsvp }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs form" >
+                            {{ form.plusone.label }}
+                            {{ form.plusone }}
+                        </div>
+                        <div class="col-xs form" >
+                            {{ form.limitations.label }}
+                            {{ form.limitations }}
+                        </div>
+                    </div>
+                    <input class="btn" type="submit" value="Finish and Send">
+                </form>
+            </div>
+        </div>
+        <script>
+            $('.where').click(function() {
+                console.log('Where clicked');
+                window.location.href = 'https://goo.gl/maps/zpmSvnjbeyB2';
+            });
 
-        $('.rsvp').click(function() {
-            $('.footer').toggle()
-        });
-    </script>
-</body>
+            $('.rsvp').click(function() {
+                $('.footer').toggle()
+            });
+        </script>
+    </body>
 
 </html>

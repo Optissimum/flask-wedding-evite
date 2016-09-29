@@ -1,7 +1,7 @@
-/**{
+*{
     border: 1px solid black;
     outline-color: red;
-}*/
+}
 
 body {
     background-color: #533d1b;
@@ -23,7 +23,7 @@ h1 {
     -ms-user-select: none;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5 {
     @extend box;
     font-family: 'Crimson Text', serif;
     font-size: 6vw;
@@ -45,10 +45,18 @@ h4 {
     font-size: 3vw;
 }
 
+h5 {
+    font-size: 2vw;
+}
+
 input, textarea {
     background-color: transparent;
     border: 1px solid #BD8A3D;
     color: #BD8A3D;
+    padding: 0.5em;
+    font-family: 'Crimson Text', serif;
+    font-size: 2vw;
+    vertical-align: middle;
 }
 
 .footer, .banner {
@@ -63,6 +71,7 @@ input, textarea {
 }
 
 .btn {
+    border-radius: 1vw;
     border-width: 1px;
     border-color: #BD8A3D;
 }
@@ -85,9 +94,10 @@ input, textarea {
 }
 
 .form {
-    display: inline;
-    vertical-align: text-bottom;;
     margin-right: 1em;
+    font-size: 2vw;
+    font-family: 'Crimson Text', serif;
+
 }
 
 #footer-svg {

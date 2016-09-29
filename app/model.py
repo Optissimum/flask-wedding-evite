@@ -11,7 +11,7 @@ class Guest(database.Model):
     limitations = database.Column(database.String())
     plusone = database.Column(database.Integer())
 
-    def __init__(self, name, email):
+    def __init__(self, name, email, plusone, address, limitations, rsvp):
         self.name = name
         self.email = email
         self.plusone = plusone

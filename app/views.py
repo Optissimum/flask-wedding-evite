@@ -2,11 +2,35 @@ from app import app, database
 import model
 from flask import (
     render_template, redirect,
-    url_for, flash, request,
-    jsonify, abort)
+    url_for, flash, request)
+from contextlib import contextmanager
+
+@contextmanager
+def database_session():
+    """Provide a clean way to access our database so it won't fail."""
+    session = database.session()
+    try:
+        yield session
+        session.commit()
+        session.flush()
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
 
 @app.route('/',
            methods=['GET', 'POST'])
 def rsvp():
-    form = model.UserForm(request.form)
-    return render_template('index.html', form=form)
+    with database_session() as session:
+        form = model.UserForm(request.form)
+        if request.method == 'POST':
+            form.validate_on_submit()
+            guest = model.Guest(form.name.data,
+            form.email.data,
+            form.plusone.data,
+            form.address.data,
+            form.limitations.data,
+            form.rsvp.data)
+            session.add(guest)
+        return render_template('index.html', form=form)
