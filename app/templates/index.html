@@ -15,81 +15,88 @@
     <body>
         <div class="row">
             <div class="col-xs-12 banner">
-                <object id="banner-svg" type="image/svg+xml" data="static/images/weddingbanner.svg"></object>
+                <img id="banner-svg" src="static/images/weddingbanner.svg" alt="" />
             </div>
         </div>
-        <div class="announcement row">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-8">
-                <h1>Lauren Cordell &nbsp;Tilley
-                    <br>
-                    &amp;
-                    <br>
-                    Fletcher Marsden Sebastian MacDonald III
-                </h1>
-                <h3>Invite you to celebrate their marriage!</h3>
+        <div class="row middle-md">
+            <div class="col-md-6 col-sm-12">
+                <div class="announcement row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <h1>Lauren Cordell &nbsp;Tilley
+                            <br>
+                            &amp;
+                            <br>
+                            Fletcher Marsden Sebastian MacDonald III
+                        </h1>
+                        <h3>Invite you to celebrate their marriage!</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <div class="row">
+                    <div class="btn where col-sm-6 col-xs-12 col-md-6">
+                        <h3>Where</h3>
+                        <h4>Unitarian Universalist Congregation of Hillsborough
+                            <br>
+                            1710 Old NC 10,<br>
+                            Hillsborough, NC 27278</h4>
+                    </div>
+                    <div class="btn when col-sm-6 col-xs-12 col-md-6">
+                        <h3>When</h3>
+                        <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
+                            <br>At four o'clock in the afternoon</h4>
+                    </div>
+                </div>
+                <h3>Celebrations and Dinner to proceed afterwards</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="btn where col-sm-6 col-xs-12 col-md-6">
-                <h3>Where</h3>
-                <h4>Unitarian Universalist Congregation of Hillsborough
-                    <br>
-                    1710 Old NC 10,<br>
-                    Hillsborough, NC 27278</h4>
-            </div>
-            <div class="btn when col-sm-6 col-xs-12 col-md-6">
-                <h3>When</h3>
-                <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
-                    <br>At four o'clock in the afternoon</h4>
-            </div>
-        </div>
-        <h3>Celebrations and Dinner to proceed afterwards</h3>
         <div class="row">
             <div class="footer">
                 <div class="col-xs-4 col-xs-offset-4">
                     <h2 class="rsvp btn">RSVP now</h2>
                 </div>
                 <!-- <img src="images/weddingfooter-compressor.svg" /> -->
-                <div class="col-xs-12">
-                    <object id="footer-svg" type="image/svg+xml" data="static/images/weddingfooter-compressor.svg"></object>
-                </div>
             </div>
             <div class="footer" style="display:none">
                 <form method="POST" action="/">
                     <div class="row">
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.name.label }}
                             {{ form.name(size=20) }}
                         </div>
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.email.label }}
                             {{ form.email }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.address.label }}
                             {{ form.address }}
                         </div>
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.rsvp.label }}
                             {{ form.rsvp }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.plusone.label }}
                             {{ form.plusone }}
                         </div>
-                        <div class="col-xs form" >
+                        <div class="col-xs form">
                             {{ form.limitations.label }}
                             {{ form.limitations }}
                         </div>
                     </div>
                     <input class="btn" type="submit" value="Finish and Send">
                 </form>
+            </div><div class="footer">
+
+            <div class="col-xs-12">
+                <object id="footer-svg" type="image/svg+xml" data="static/images/weddingfooter-compressor.svg"></object>
             </div>
+        </div>
         </div>
         <script>
             $('.where').click(function() {

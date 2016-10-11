@@ -1,7 +1,7 @@
-*{
+/**{
     border: 1px solid black;
     outline-color: red;
-}
+}*/
 
 body {
     background-color: #533d1b;
@@ -108,6 +108,23 @@ input, textarea {
     z-index: 0;
 }
 
-@media screen and (min-width: 700) {
-    h2 {}
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 4vw;
+    }
+    h2 {
+        font-size: 3vw;
+    }
+    h3 {
+        font-size: 2vw;
+    }
+    h4 {
+        font-size: 2vw;
+    }
+    #banner-svg {
+        content: url("../images/weddingbannerlarge.svg");
+    }
+    .banner {
+        margin-bottom: auto;
+    }
 }

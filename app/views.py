@@ -7,7 +7,7 @@ from contextlib import contextmanager
 
 @contextmanager
 def database_session():
-    """Provide a clean way to access our database so it won't fail."""
+    """Provide a clean way to access our database."""
     session = database.session()
     try:
         yield session
@@ -34,3 +34,9 @@ def rsvp():
             form.rsvp.data)
             session.add(guest)
         return render_template('index.html', form=form)
+
+@app.route('/guests/',
+           methods=['GET', 'POST'])
+def guest_list():
+    with database_session() as session:
+        guests = model.Guest.query.all()
