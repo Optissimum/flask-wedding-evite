@@ -33,10 +33,12 @@ def rsvp():
             form.limitations.data,
             form.rsvp.data)
             session.add(guest)
-        return render_template('index.html', form=form)
+        return render_template('evite.html', form=form)
 
 @app.route('/guests/',
            methods=['GET', 'POST'])
 def guest_list():
     with database_session() as session:
         guests = model.Guest.query.all()
+        print guests[0].name
+        return render_template('guestlist.html', guests=guests)

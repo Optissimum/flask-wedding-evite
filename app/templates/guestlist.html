@@ -1,0 +1,48 @@
+{% extends "index.html" %} {% block title %} Guest List {% endblock %} {% block content %}
+<div class="row center-lg start-md">
+    <div class="col-lg-6 col-sm-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        RSVP
+                    </th>
+                    <th>
+                        Plus Ones
+                    </th>
+                    <th>
+                        Limitations
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for guest in guests %}
+                <tr>
+                    <td>
+                        {{ guest.name }}
+                    </td>
+                    <td>
+                        {{ guest.rsvp }}
+                    </td>
+                    <td>
+                        {{ guest.plusone }}
+                    </td>
+                    <td>
+                        {{ guest.limitations }}
+                    </td>
+                    <td>
+                        {{ guest.address }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
