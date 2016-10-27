@@ -13,11 +13,15 @@
 
 <body>
     <nav>
-        <div class="row">
-
-        </div>
+        <img src="" alt="Logo" />
+        <ul>
+            <li><a href="{{url_for('rsvp')}}">RSVP</a></li>
+            <li class="active"><a href="{{url_for('guest_list')}}">Guest List</a></li>
+        </ul>
     </nav>
-    {% block content %} {% endblock %}
+    <div class="main">
+        {% block content %} {% endblock %}
+    </div>
 </body>
 
 </html>

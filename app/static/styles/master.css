@@ -7,6 +7,7 @@ body {
     background-color: #533d1b;
     color: #c4a571;
     text-align: center;
+    font-family: 'Crimson Text', serif;
 }
 
 h1 {
@@ -49,6 +50,41 @@ h5 {
     font-size: 2vw;
 }
 
+nav {
+    position: fixed;
+    background-color: #886C41;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 15em;
+}
+
+nav img {
+    margin-top: 2em;
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 2em;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #433415;
+}
+
+li .active {
+    background-color: #DEBB87;
+}
+
 input, textarea {
     background-color: transparent;
     border: 1px solid #BD8A3D;
@@ -57,6 +93,10 @@ input, textarea {
     font-family: 'Crimson Text', serif;
     font-size: 2vw;
     vertical-align: middle;
+}
+
+.main {
+    margin-left: 15em;
 }
 
 .footer, .banner {
@@ -70,7 +110,7 @@ input, textarea {
     margin-bottom: 0px;
 }
 
-.btn, table {
+.btn {
     border-radius: 1vw;
     border-width: 1px;
     border-color: #BD8A3D;
@@ -81,7 +121,6 @@ input, textarea {
     border-color: #BD8A3D;
     background-color: #735425;
 }
-
 
 .rsvp {
     -webkit-touch-callout: none;
@@ -97,8 +136,49 @@ input, textarea {
     margin-right: 1em;
     font-size: 2vw;
     font-family: 'Crimson Text', serif;
-
 }
+
+.guest-table {
+    font-family: 'Crimson Text', serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+
+.guest-table th {
+    font-weight: bold;
+    height: 2em;
+    transition: all 0.25s;
+    background-color: #321E01;
+}
+
+.guest-table tr:first-child th:first-child {
+    border-radius: 0.25em 0 0 0;
+}
+
+.guest-table tr:first-child th:last-child {
+    border-radius: 0 0.25em 0 0;
+}
+
+.guest-table td {
+    align-content: center;
+    height: 2em;
+    transition: all 0.25s;
+}
+
+.guest-table tr:nth-child(even) td {
+    background: #53380F;
+}
+
+.guest-table tr:nth-child(odd) td {
+    background: #B59565;
+    color: #53380F;
+}
+
+.guest-table tr:hover td { background: #E6BD80; color: #321E01; }
 
 #footer-svg {
     position: absolute;
