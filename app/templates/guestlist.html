@@ -1,21 +1,21 @@
 {% extends "index.html" %} {% block title %} Guest List {% endblock %} {% block style %}
 <style media="screen">
     .guest-table th {
-        background-color: #321E01;
+        background-color: {{colors['palette'][4]}};
     }
 
     .guest-table tr:nth-child(even) td {
-        background: #53380F;
+        background: {{colors['palette'][3]}};
     }
 
     .guest-table tr:nth-child(odd) td {
-        background: #B59565;
-        color: #53380F;
+        background: {{colors['compliments'][3]}};
+        color: {{colors['palette'][3]}};
     }
 
     .guest-table tr:hover td {
-        background: #E6BD80;
-        color: #321E01;
+        background: {{colors['compliments'][4]}};
+        color: {{colors['palette'][4]}};
     }
 </style>
 {% endblock %} {% block content %}
