@@ -5,6 +5,8 @@ from flask import (
     url_for, flash, request)
 from contextlib import contextmanager
 
+colors = model.Settings.query.first()
+
 @contextmanager
 def database_session():
     """Provide a clean way to access our database."""
@@ -40,5 +42,19 @@ def rsvp():
 def guest_list():
     with database_session() as session:
         guests = model.Guest.query.all()
-        print guests[0].name
         return render_template('guestlist.html', guests=guests)
+
+@app.route('/settings/',
+           methods=['GET', 'POST'])
+def settings():
+    options = model.SettingsForm(request.form)
+    if request.method == "POST":
+        form.validate_on_submit()
+        setting = model.Settings(
+        form.partners.data,
+        form.colorMain.data,
+        form.colorAccent1.data,
+        form.colorAccent2.data,
+        form.colorAccent3.data,
+        form.colorAccent4.data)
+    return render_template('settings.html', options=options)
