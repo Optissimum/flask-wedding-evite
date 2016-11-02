@@ -1,0 +1,14 @@
+{% extends "index.html" %} {% block title %} Settings {% endblock %} {% block content %}
+<form action="/settings" method="post">
+    {% for option in options %}
+    <div class="row">
+        <div class="col-xs-4 form">
+            {{ option.label|e }}
+        </div>
+        <div class="col-xs-4 form" style="margin-top: 0.25em;">
+            {{ option|e }}
+        </div>
+    </div>
+    {% endfor %}
+</form>
+{% endblock %}

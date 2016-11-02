@@ -9,6 +9,34 @@
     <script src="{{ url_for('static', filename='javascript/jquery-3.1.0.js') }}" charset="utf-8"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/master.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/flexboxgrid.css') }}" />
+    <style media="screen">
+        body {
+            background-color: {{colors['pallette'][0]}};
+            color: {{colors['compliments'][0]}};
+        }
+
+        nav {
+            background-color: {{colors['pallette'][1]}};
+        }
+
+        nav a {
+            color: {{colors['compliments'][1]}};
+        }
+
+        li .active {
+            background-color: {{colors['pallette'][1]}};
+        }
+
+        .btn {
+            border-color: {{colors['pallette'][2]}};
+        }
+
+        .btn:hover {
+            border-color: {{colors['pallette'][2]}};
+            background-color: {{colors['compliments'][2]}};
+        }
+    </style>
+    {% block style %}{% endblock %}
 </head>
 
 <body>
@@ -16,7 +44,8 @@
         <img src="" alt="Logo" />
         <ul>
             <li><a href="{{url_for('rsvp')}}">RSVP</a></li>
-            <li class="active"><a href="{{url_for('guest_list')}}">Guest List</a></li>
+            <li><a href="{{url_for('guest_list')}}">Guest List</a></li>
+            <li><a href="{{url_for('settings')}}">Settings</a></li>
         </ul>
     </nav>
     <div class="main">
