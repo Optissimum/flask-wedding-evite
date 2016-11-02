@@ -1,7 +1,7 @@
 from app import database
 from flask_wtf import Form
 from wtforms import TextAreaField, BooleanField, IntegerField, TextField
-from wtforms.validators import DataRequired, Length
+from wtforms.validators import InputRequired, Length
 
 class Guest(database.Model):
     email = database.Column(database.String(), primary_key = True)
@@ -19,24 +19,53 @@ class Guest(database.Model):
         self.limitations = limitations
         self.rsvp = rsvp
 
+class Settings(database.Model):
+    id = database.Column(database.Integer(), primary_key=True)
+    partners = database.Column(database.String())
+    color_main = database.Column(database.String())
+    color_acc1 = database.Column(database.String())
+    color_acc2 = database.Column(database.String())
+    color_acc3 = database.Column(database.String())
+    color_acc4 = database.Column(database.String())
+
 class UserForm(Form):
     name = TextField(
-        'Name', validators=[DataRequired()]
+        'Name', [InputRequired()]
     )
     email = TextField(
-        'Email', validators=[DataRequired(), Length(min=6, max=40)]
+        'Email', [InputRequired(), Length(min=6, max=40)]
     )
     address = TextAreaField(
-        'Address', validators=[DataRequired()]
+        'Address', [InputRequired()]
     )
     rsvp = BooleanField(
-        'RSVP', validators=[DataRequired()]
+        'RSVP', [InputRequired()]
     )
     plusone = IntegerField(
-        'Plus One', validators=[DataRequired()]
+        'Plus One', [InputRequired()]
     )
     limitations = TextAreaField(
-        'Dietary Restrictions', validators=[DataRequired()]
+        'Dietary Restrictions', [InputRequired()]
+    )
+
+class SettingsForm(Form):
+    partners = TextAreaField(
+        'Names of Partners', [InputRequired()]
+    )
+    colorMain = TextField(
+        'Main Color', [InputRequired(), Length(min=6, max=6)]
+    )
+    colorAccent1 = TextField(
+        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    )
+    colorAccent2 = TextField(
+        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    )
+    colorAccent3 = TextField(
+        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    )
+    colorAccent4 = TextField(
+        'Accent Color', [InputRequired(), Length(min=6, max=6)]
     )
 
 database.create_all()
