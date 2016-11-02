@@ -4,7 +4,7 @@
 }*/
 
 body {
-    background-color: #533d1b;
+    background-color: #735425;
     color: #c4a571;
     text-align: center;
     font-family: 'Crimson Text', serif;
@@ -52,7 +52,7 @@ h5 {
 
 nav {
     position: fixed;
-    background-color: #886C41;
+    background-color: #53380F;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -78,7 +78,7 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #433415;
+    color: #B59565;
 }
 
 li .active {
@@ -114,12 +114,12 @@ input, textarea {
     border-radius: 1vw;
     border-width: 1px;
     border-color: #BD8A3D;
-}
+}               
 
 .btn:hover {
     border-radius: 1vw;
     border-color: #BD8A3D;
-    background-color: #735425;
+    background-color: #321E01;
 }
 
 .rsvp {
