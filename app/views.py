@@ -68,19 +68,19 @@ def scheme_creator():
     settings = model.Settings.query.order_by(
         model.Settings.id.desc()).first()
     if (settings):
-        pallette = [settings.color_main,
+        palette = [settings.color_main,
                     settings.color_acc1,
                     settings.color_acc2,
                     settings.color_acc3,
                     settings.color_acc4]
     else:
-        pallette = ['#735425',
+        palette = ['#735425',
                     '#53380F',
                     '#BD8A3D',
                     '#B59565',
                     '#321E01']
-    compliments = [color_match_gen(x) for x in pallette]
-    return {'pallette':pallette, 'compliments':compliments}
+    compliments = [color_match_gen(x) for x in palette]
+    return {'palette':palette, 'compliments':compliments}
 
 
 def color_match_gen(color):
