@@ -3,8 +3,9 @@ from flask_wtf import Form
 from wtforms import TextAreaField, BooleanField, IntegerField, TextField
 from wtforms.validators import InputRequired, Length
 
+
 class Guest(database.Model):
-    email = database.Column(database.String(), primary_key = True)
+    email = database.Column(database.String(), primary_key=True)
     name = database.Column(database.String())
     address = database.Column(database.String())
     rsvp = database.Column(database.Boolean())
@@ -19,6 +20,7 @@ class Guest(database.Model):
         self.limitations = limitations
         self.rsvp = rsvp
 
+
 class Settings(database.Model):
     id = database.Column(database.Integer(), primary_key=True)
     partners = database.Column(database.String())
@@ -27,6 +29,25 @@ class Settings(database.Model):
     color_acc2 = database.Column(database.String())
     color_acc3 = database.Column(database.String())
     color_acc4 = database.Column(database.String())
+    date = database.Column(database.String())
+    time = database.Column(database.String())
+    address = database.Column(database.String())
+
+    def __init__(self, partners,
+                 date, time, address,
+                 color_main, color_acc1,
+                 color_acc2, color_acc3,
+                 color_acc4):
+        self.partners = partners
+        self.date = date
+        self.time = time
+        self.address = address
+        self.color_main = color_main
+        self.color_acc1 = color_acc1
+        self.color_acc2 = color_acc2
+        self.color_acc3 = color_acc3
+        self.color_acc4 = color_acc4
+
 
 class UserForm(Form):
     name = TextField(
@@ -48,24 +69,34 @@ class UserForm(Form):
         'Dietary Restrictions', [InputRequired()]
     )
 
+
 class SettingsForm(Form):
     partners = TextAreaField(
         'Names of Partners', [InputRequired()]
     )
-    colorMain = TextField(
-        'Main Color', [InputRequired(), Length(min=6, max=6)]
+    date = TextField(
+        'Date', [InputRequired()]
     )
-    colorAccent1 = TextField(
-        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    time = TextField(
+        'Time', [InputRequired()]
     )
-    colorAccent2 = TextField(
-        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    address = TextField(
+        'Address', [InputRequired()]
     )
-    colorAccent3 = TextField(
-        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    color_main = TextField(
+        'Main Color', [InputRequired(), Length(min=7, max=7)]
     )
-    colorAccent4 = TextField(
-        'Accent Color', [InputRequired(), Length(min=6, max=6)]
+    color_acc1 = TextField(
+        'Accent Color', [InputRequired(), Length(min=7, max=7)]
+    )
+    color_acc2 = TextField(
+        'Accent Color', [InputRequired(), Length(min=7, max=7)]
+    )
+    color_acc3 = TextField(
+        'Accent Color', [InputRequired(), Length(min=7, max=7)]
+    )
+    color_acc4 = TextField(
+        'Accent Color', [InputRequired(), Length(min=7, max=7)]
     )
 
 database.create_all()

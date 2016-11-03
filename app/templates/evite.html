@@ -49,11 +49,14 @@
             <div class="col-md-6 col-sm-12">
                 <div class="announcement row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <h1>Lauren Cordell &nbsp;Tilley
+                        <h1>
+                        {% for person in partners[:-1] %}
+                            {{person}},
                             <br>
+                        {% endfor %}
                             &amp;
                             <br>
-                            Fletcher Marsden Sebastian MacDonald III
+                            {{partners[-1]}}
                         </h1>
                         <h3>Invite you to celebrate their marriage!</h3>
                     </div>
@@ -63,15 +66,12 @@
                 <div class="row">
                     <div class="btn where col-sm-6 col-xs-12 col-md-6">
                         <h3>Where</h3>
-                        <h4>Unitarian Universalist Congregation of Hillsborough
-                            <br>
-                            1710 Old NC 10,<br>
-                            Hillsborough, NC 27278</h4>
+                        <h4>{{address}}</h4>
                     </div>
                     <div class="btn when col-sm-6 col-xs-12 col-md-6">
                         <h3>When</h3>
-                        <h4>Saturday, October the Twenty Second, Two Thousand and Sixteen,
-                            <br>At four o'clock in the afternoon</h4>
+                        <h4>{{date}},
+                            <br>At {{time}}</h4>
                     </div>
                 </div>
                 <h3>Celebrations and Dinner to proceed afterwards</h3>

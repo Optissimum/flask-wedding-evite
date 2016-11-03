@@ -35,7 +35,6 @@ nav li {
 
 nav a {
     text-decoration: none;
-
 }
 
 h1 {
@@ -43,19 +42,28 @@ h1 {
     font-weight: 500;
 }
 
-textarea {}
+button {
+    font-weight: 600;
+    width: 50%;
+    height: auto;
+    font-family: 'Crimson Text', serif;
+}
 
 .main {
     margin-left: 15em;
 }
 
 .btn {
-    border-radius: 1vw;
+    border-radius: 5px;
     border-width: 1px;
+    padding: 0.5em;
+    cursor: pointer;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 
 .btn:hover {
-    border-radius: 1vw;
+    border-width: 2px;
 }
 
 .rsvp {

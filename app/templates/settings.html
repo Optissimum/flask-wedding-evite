@@ -1,5 +1,6 @@
 {% extends "index.html" %} {% block title %} Settings {% endblock %} {% block content %}
-<form action="/settings" method="post">
+<h1>Settings</h1>
+<form method="post">
     {% for option in options %}
     <div class="row">
         <div class="col-xs-4 form">
@@ -10,5 +11,10 @@
         </div>
     </div>
     {% endfor %}
+    <div class="row">
+        <div class="col-xs-offset-4 col-xs-4 form">
+            <input type="submit" class="btn" Value="Update"></input>
+        </div>
+    </div>
 </form>
 {% endblock %}
