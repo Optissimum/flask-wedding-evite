@@ -8,6 +8,18 @@ body {
     font-family: 'Crimson Text', serif;
 }
 
+h1 {
+    width: 100%;
+    font-weight: 500;
+}
+
+button {
+    font-weight: 600;
+    width: 50%;
+    height: auto;
+    font-family: 'Crimson Text', serif;
+}
+
 nav {
     position: fixed;
     top: 0px;
@@ -37,16 +49,12 @@ nav a {
     text-decoration: none;
 }
 
-h1 {
-    width: 100%;
-    font-weight: 500;
-}
-
-button {
-    font-weight: 600;
-    width: 50%;
-    height: auto;
+textarea, input {
+    border: 1px;
+    border-radius: 1px;
     font-family: 'Crimson Text', serif;
+    font-size: 0.5em;
+    padding: 3px;
 }
 
 .main {
