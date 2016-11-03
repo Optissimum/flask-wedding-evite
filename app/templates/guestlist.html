@@ -1,4 +1,25 @@
-{% extends "index.html" %} {% block title %} Guest List {% endblock %} {% block content %}
+{% extends "index.html" %} {% block title %} Guest List {% endblock %} {% block style %}
+<style media="screen">
+    .guest-table th {
+        background-color: {{colors['palette'][4]}};
+    }
+
+    .guest-table tr:nth-child(even) td {
+        background: {{colors['palette'][3]}};
+        color: {{colors['compliments'][3]}};
+    }
+
+    .guest-table tr:nth-child(odd) td {
+        background: {{colors['compliments'][3]}};
+        color: {{colors['palette'][3]}};
+    }
+
+    .guest-table tr:hover td {
+        background: {{colors['compliments'][4]}};
+        color: {{colors['palette'][4]}};
+    }
+</style>
+{% endblock %} {% block content %}
 <div class="row center-lg">
     <h1>Guest List</h1>
     <div class="col-lg-6 col-md-12">
@@ -29,11 +50,7 @@
                         {{ guest.name }}
                     </td>
                     <td>
-                        {% if guest.rsvp: %}
-                        Yes
-                        {% else: %}
-                        No
-                        {% endif %}
+                        {% if guest.rsvp: %} Yes {% else: %} No {% endif %}
                     </td>
                     <td>
                         {{ guest.plusone }}

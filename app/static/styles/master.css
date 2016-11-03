@@ -4,55 +4,12 @@
 }*/
 
 body {
-    background-color: #533d1b;
-    color: #c4a571;
     text-align: center;
     font-family: 'Crimson Text', serif;
 }
 
-h1 {
-    @extend box;
-    font-family: 'Aguafina Script', cursive;
-    font-size: 8vw;
-    vertical-align: middle;
-    width: 100%;
-    font-weight: 300;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-h2, h3, h4, h5 {
-    @extend box;
-    font-family: 'Crimson Text', serif;
-    font-size: 6vw;
-    vertical-align: middle;
-    width: 100%;
-    font-weight: 200;
-}
-
-h3 {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    font-size: 4vw;
-}
-
-h4 {
-    font-size: 3vw;
-}
-
-h5 {
-    font-size: 2vw;
-}
-
 nav {
     position: fixed;
-    background-color: #886C41;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -78,48 +35,35 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #433415;
 }
 
-li .active {
-    background-color: #DEBB87;
+h1 {
+    width: 100%;
+    font-weight: 500;
 }
 
-input, textarea {
-    background-color: transparent;
-    border: 1px solid #BD8A3D;
-    color: #BD8A3D;
-    padding: 0.5em;
+button {
+    font-weight: 600;
+    width: 50%;
+    height: auto;
     font-family: 'Crimson Text', serif;
-    font-size: 2vw;
-    vertical-align: middle;
 }
 
 .main {
     margin-left: 15em;
 }
 
-.footer, .banner {
-    vertical-align: middle;
-    width: 100%;
-    margin-bottom: -20%;
-    position: relative;
-}
-
-.footer {
-    margin-bottom: 0px;
-}
-
 .btn {
-    border-radius: 1vw;
+    border-radius: 5px;
     border-width: 1px;
-    border-color: #BD8A3D;
+    padding: 0.5em;
+    cursor: pointer;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 
 .btn:hover {
-    border-radius: 1vw;
-    border-color: #BD8A3D;
-    background-color: #735425;
+    border-width: 2px;
 }
 
 .rsvp {
@@ -138,6 +82,15 @@ input, textarea {
     font-family: 'Crimson Text', serif;
 }
 
+
+/********************/
+
+
+/* Guest list table */
+
+
+/********************/
+
 .guest-table {
     font-family: 'Crimson Text', serif;
     border-collapse: collapse;
@@ -147,12 +100,10 @@ input, textarea {
     width: 100%;
 }
 
-
 .guest-table th {
     font-weight: bold;
     height: 2em;
     transition: all 0.25s;
-    background-color: #321E01;
 }
 
 .guest-table tr:first-child th:first-child {
@@ -167,45 +118,4 @@ input, textarea {
     align-content: center;
     height: 2em;
     transition: all 0.25s;
-}
-
-.guest-table tr:nth-child(even) td {
-    background: #53380F;
-}
-
-.guest-table tr:nth-child(odd) td {
-    background: #B59565;
-    color: #53380F;
-}
-
-.guest-table tr:hover td { background: #E6BD80; color: #321E01; }
-
-#footer-svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 0;
-    margin-top: -20%;
-}
-
-@media screen and (min-width: 700px) {
-    h1 {
-        font-size: 4vw;
-    }
-    h2 {
-        font-size: 3vw;
-    }
-    h3 {
-        font-size: 2vw;
-    }
-    h4 {
-        font-size: 2vw;
-    }
-    #banner-svg {
-        content: url("../images/weddingbannerlarge.svg");
-    }
-    .banner {
-        margin-bottom: auto;
-    }
 }
