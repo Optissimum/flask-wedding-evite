@@ -80,7 +80,7 @@ class SettingsForm(Form):
     time = TextField(
         'Time', [InputRequired()]
     )
-    address = TextField(
+    address = TextAreaField(
         'Address', [InputRequired()]
     )
     color_main = TextField(
